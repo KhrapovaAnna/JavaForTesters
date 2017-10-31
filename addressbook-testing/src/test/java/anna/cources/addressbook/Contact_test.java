@@ -22,10 +22,6 @@ public class Contact_test {
     public void setUp() throws Exception {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    }
-    
-    @Test
-    public void Contact_test() {
         wd.get("http://localhost/addressbook/");
         wd.findElement(By.id("LoginForm")).click();
         wd.findElement(By.name("user")).click();
@@ -35,6 +31,10 @@ public class Contact_test {
         wd.findElement(By.name("pass")).clear();
         wd.findElement(By.name("pass")).sendKeys("secret");
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    }
+    
+    @Test
+    public void Contact_test() {
         wd.findElement(By.id("content")).click();
         wd.findElement(By.linkText("add new")).click();
         wd.findElement(By.name("firstname")).click();
