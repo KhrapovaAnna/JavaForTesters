@@ -33,7 +33,7 @@ public class Group_test {
     }
     
     @Test
-    public void Group_test() {
+    public void newGroup_test() {
         wd.findElement(By.linkText("groups")).click();
         wd.findElement(By.name("new")).click();
         wd.findElement(By.name("group_name")).click();

@@ -34,7 +34,7 @@ public class Contact_test {
     }
     
     @Test
-    public void Contact_test() {
+    public void newContact_test() {
         wd.findElement(By.id("content")).click();
         wd.findElement(By.linkText("add new")).click();
         wd.findElement(By.name("firstname")).click();
