@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lessons1_task2/Lessons1_task2.iml" filepath="$PROJECT_DIR$/.idea/modules/Lessons1_task2/Lessons1_task2.iml" group="Lessons1_task2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-testing.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-testing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-testing_main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-testing_main.iml" group="addressbook-testing" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-testing_test.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-testing_test.iml" group="addressbook-testing" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox_main.iml" group="sandbox" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox_test.iml" group="sandbox" />
