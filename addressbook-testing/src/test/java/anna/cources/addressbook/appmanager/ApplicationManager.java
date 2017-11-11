@@ -13,6 +13,7 @@ public class ApplicationManager {
     private NavigationHelper navigationHelper;
     private ContactHelper contactHelper;
     private GroupHelper groupHelper;
+    private SessionHelper sessionHelper;
 
     public static boolean isAlertPresent(FirefoxDriver wd) {
         try {
@@ -29,18 +30,8 @@ public class ApplicationManager {
         groupHelper = new GroupHelper (wd);
         contactHelper = new ContactHelper(wd);
         navigationHelper = new NavigationHelper (wd);
-        login("admin", "secret");
-    }
-
-    private void login(String login, String Password) {
-        wd.get("http://localhost/addressbook/");
-        wd.findElement(By.name("user")).click();
-        wd.findElement(By.name("user")).clear();
-        wd.findElement(By.name("user")).sendKeys(login);
-        wd.findElement(By.name("pass")).click();
-        wd.findElement(By.name("pass")).clear();
-        wd.findElement(By.name("pass")).sendKeys(Password);
-        wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+        sessionHelper = new SessionHelper (wd);
+        sessionHelper.login("admin", "secret");
     }
 
     public void stop() {
