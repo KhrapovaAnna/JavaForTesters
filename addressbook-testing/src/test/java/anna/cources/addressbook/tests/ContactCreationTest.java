@@ -8,9 +8,9 @@ public class ContactCreationTest extends TestBase {
 
     @Test
     public void newContact_test() {
-        app.openAddContactPage();
-        app.fillNewContactFields(new ContactData("Anna", "L", "Khrapova", "anna_khrapova", "-", "Tru-la-la", "Tri-ru-ru", "8888", "7777", "6666", "5555", "a@a.a", "b@b.b", "c@c.c"));
-        app.submitContactForm();
-        app.openContactList();
+        app.getNavigationHelper().openAddContactPage();
+        app.getContactHelper().fillNewContactFields(new ContactData("Anna", "L", "Khrapova", "anna_khrapova", "-", "Tru-la-la", "Tri-ru-ru", "8888", "7777", "6666", "5555", "a@a.a", "b@b.b", "c@c.c"));
+        app.getContactHelper().submitContactForm();
+        app.getNavigationHelper().openContactList();
     }
 }
