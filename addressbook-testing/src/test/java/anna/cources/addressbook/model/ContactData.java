@@ -1,4 +1,4 @@
-package anna.cources.addressbook;
+package anna.cources.addressbook.model;
 
 public class ContactData {
     private final String firstname;

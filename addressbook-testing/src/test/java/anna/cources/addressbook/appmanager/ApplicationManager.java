@@ -1,15 +1,15 @@
-package anna.cources.addressbook;
+package anna.cources.addressbook.appmanager;
 
+import anna.cources.addressbook.model.ContactData;
+import anna.cources.addressbook.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class ApplicationManager {
     FirefoxDriver wd;
 
     public static boolean isAlertPresent(FirefoxDriver wd) {
@@ -21,8 +21,7 @@ public class TestBase {
         }
     }
 
-    @BeforeMethod
-    public void setUp() throws Exception {
+    public void init() {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         login("admin", "secret");
@@ -39,11 +38,11 @@ public class TestBase {
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
     }
 
-    protected void submitNewGroup() {
+    public void submitNewGroup() {
         wd.findElement(By.name("submit")).click();
     }
 
-    protected void fillNewGroupFields(GroupData groupData) {
+    public void fillNewGroupFields(GroupData groupData) {
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
         wd.findElement(By.name("group_name")).sendKeys(groupData.getName());
@@ -55,23 +54,23 @@ public class TestBase {
         wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
     }
 
-    protected void pressNewGroup() {
+    public void pressNewGroup() {
         wd.findElement(By.name("new")).click();
     }
 
-    protected void openGroupPage() {
+    public void openGroupPage() {
         wd.findElement(By.linkText("groups")).click();
     }
 
-    protected void openContactList() {
+    public void openContactList() {
         wd.findElement(By.linkText("home")).click();
     }
 
-    protected void submitContactForm() {
+    public void submitContactForm() {
         wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
     }
 
-    protected void fillNewContactFields(ContactData contactData) {
+    public void fillNewContactFields(ContactData contactData) {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
         wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
@@ -117,29 +116,28 @@ public class TestBase {
 
     }
 
-    protected void openAddContactPage() {
+    public void openAddContactPage() {
         wd.findElement(By.linkText("add new")).click();
     }
 
-    @AfterMethod
-    public void tearDown() {
+    public void stop() {
         wd.quit();
     }
 
-    protected void deleteGroup() {
+    public void deleteGroup() {
         wd.findElement(By.xpath("//div[@id='content']/form/input[5]")).click();
     }
 
-    protected void selectGroup() {
+    public void selectGroup() {
         wd.findElement(By.name("selected[]")).click();
     }
 
-    protected void DeleteContact() {
+    public void DeleteContact() {
         wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
         wd.switchTo().alert().accept();
     }
 
-    protected void SelectContact() {
+    public void SelectContact() {
         wd.findElement(By.name("selected[]")).click();
     }
 }

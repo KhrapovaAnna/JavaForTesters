@@ -1,4 +1,4 @@
-package anna.cources.addressbook;
+package anna.cources.addressbook.model;
 
 public class GroupData {
     private final String name;
