@@ -1,11 +1,11 @@
 package anna.cources.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 
 public class NavigationHelper extends HelperBase{
 
-    public NavigationHelper(FirefoxDriver wd) {
+    public NavigationHelper(WebDriver wd) {
         super (wd);
     }
 
